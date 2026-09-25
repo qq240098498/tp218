@@ -54,6 +54,22 @@ function nextId(prefix, list) {
   return prefix + '-' + String(max + 1).padStart(4, '0');
 }
 
+// 业务编号（如 ZL-0001）：取现有最大号 + 1；万一算出的号已被占用，顺延到空号为止
+function nextCode(prefix, list) {
+  const used = new Set();
+  let max = 0;
+  const pattern = new RegExp('^' + prefix + '-(\\d+)$');
+  for (const item of list || []) {
+    const code = String(item.code || '');
+    used.add(code);
+    const matched = code.match(pattern);
+    if (matched) max = Math.max(max, Number(matched[1]));
+  }
+  let n = max + 1;
+  while (used.has(prefix + '-' + String(n).padStart(4, '0'))) n += 1;
+  return prefix + '-' + String(n).padStart(4, '0');
+}
+
 function todayIso() {
   const now = new Date();
   return now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
@@ -76,4 +92,4 @@ function daysBetween(from, to) {
   return Math.round((end - start) / 86400000);
 }
 
-module.exports = { load, save, nextId, normalize, todayIso, round, daysBetween, DEFAULT_SETTINGS, dataFile };
+module.exports = { load, save, nextId, nextCode, normalize, todayIso, round, daysBetween, DEFAULT_SETTINGS, dataFile };

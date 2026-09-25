@@ -1766,26 +1766,6 @@
       ]
     },
     {
-      "id": "ord-0002",
-      "code": "ZL-0002",
-      "reservoirId": "res-0001",
-      "issuedAt": "2026-06-08",
-      "targetFlow": 200,
-      "windowStart": "2026-06-08",
-      "windowEnd": "2026-06-10",
-      "status": "已完成",
-      "reason": "应对 6 月 8 日强降雨，提前预泄",
-      "issuer": "调度科",
-      "remark": "",
-      "attachments": [
-        {
-          "name": "气象预报单",
-          "note": "暴雨橙色预警",
-          "at": "2026-06-08"
-        }
-      ]
-    },
-    {
       "id": "ord-0003",
       "code": "ZL-0003",
       "reservoirId": "res-0001",
@@ -1818,6 +1798,48 @@
           "at": "2026-05-05"
         }
       ]
+    },
+    {
+      "id": "ord-0005",
+      "code": "ZL-0005",
+      "reservoirId": "res-0001",
+      "issuedAt": "2026-09-25",
+      "targetFlow": 12312,
+      "windowStart": "2026-09-25",
+      "windowEnd": "2026-09-25",
+      "status": "已下达",
+      "reason": "",
+      "issuer": "",
+      "remark": "",
+      "attachments": []
+    },
+    {
+      "id": "ord-0006",
+      "code": "ZL-0006",
+      "reservoirId": "res-0001",
+      "issuedAt": "2026-09-25",
+      "targetFlow": 12312,
+      "windowStart": "2026-09-25",
+      "windowEnd": "2026-09-25",
+      "status": "已下达",
+      "reason": "",
+      "issuer": "",
+      "remark": "",
+      "attachments": []
+    },
+    {
+      "id": "ord-0007",
+      "code": "ZL-0007",
+      "reservoirId": "res-0001",
+      "issuedAt": "2026-09-25",
+      "targetFlow": 4444,
+      "windowStart": "2026-09-25",
+      "windowEnd": "2026-09-25",
+      "status": "已下达",
+      "reason": "",
+      "issuer": "",
+      "remark": "",
+      "attachments": []
     }
   ]
 }
