@@ -160,7 +160,7 @@ function createOrder(data, payload) {
   }
   const order = {
     id: store.nextId('ord', data.orders),
-    code: 'ZL-' + String(data.orders.length + 1).padStart(4, '0'),
+    code: store.nextCode('ZL', data.orders),
     reservoirId: reservoir.id,
     issuedAt: String(payload.issuedAt || store.todayIso()),
     targetFlow,
@@ -220,7 +220,7 @@ function copyOrder(data, id, payload) {
   const source = findOrder(data, id);
   const order = {
     id: store.nextId('ord', data.orders),
-    code: 'ZL-' + String(data.orders.length + 1).padStart(4, '0'),
+    code: store.nextCode('ZL', data.orders),
     reservoirId: source.reservoirId,
     issuedAt: String((payload && payload.issuedAt) || store.todayIso()),
     targetFlow: Number(source.targetFlow),
